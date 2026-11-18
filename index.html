@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Social Listening Demo — AgencyCRM</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">◆</div>
+        <div>
+          <div class="brand-name">AgencyCRM</div>
+          <div class="brand-sub">Social listening demo</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a class="active">Dashboard</a>
+        <a href="https://slavh.github.io/outreach-crm-demo/" target="_blank" rel="noopener">CRM dashboard →</a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="team">5 platforms · human-in-the-loop</div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h1>Social listening &amp; response automation</h1>
+          <p class="muted">10 buying-intent leads found across Reddit · drafts ready for human approval</p>
+        </div>
+        <div class="topbar-actions">
+          <button class="btn ghost" id="refreshBtn">Refresh scan</button>
+        </div>
+      </header>
+
+      <section class="stats">
+        <div class="stat"><div class="stat-label">Platforms monitored</div><div class="stat-val">5</div><div class="stat-delta">Reddit · LinkedIn · FB · X · IG</div></div>
+        <div class="stat"><div class="stat-label">Buying-intent leads</div><div class="stat-val" id="s-leads">0</div><div class="stat-delta">scored &amp; deduped</div></div>
+        <div class="stat"><div class="stat-label">Drafts awaiting review</div><div class="stat-val" id="s-drafts">0</div><div class="stat-delta">none posted without approval</div></div>
+        <div class="stat"><div class="stat-label">Avg response time</div><div class="stat-val">&lt;2min</div><div class="stat-delta">from thread to draft</div></div>
+      </section>
+
+      <section class="card">
+        <div class="card-head"><h2>Live scan results</h2><span class="muted">keyword-scored · human review before sending</span></div>
+        <div class="table-wrap">
+          <table class="leads">
+            <thead><tr>
+              <th>Subreddit</th><th>Post</th><th>Author</th><th>Score</th><th>Comments</th><th>Drafted reply</th>
+            </tr></thead>
+            <tbody id="scanBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <div class="toast" id="toast" hidden></div>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
